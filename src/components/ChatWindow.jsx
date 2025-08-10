@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { FiSend, FiZap } from 'react-icons/fi';
+import { API_BASE_URL } from "../config";
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState([]);
@@ -60,7 +61,7 @@ export default function ChatWindow() {
       }]);
 
       // Call your API endpoint
-      const response = await fetch('http://localhost:8081/chat', {
+      const response = await fetch(API_BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
